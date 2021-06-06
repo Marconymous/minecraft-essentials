@@ -1,0 +1,8 @@
+name: MinecraftEssentials
+main: marconymous.dev.MinecEssentials
+version: 1.0
+author: Marconymous
+commands:
+  rlt:
+    description: Command to toggle a rule.
+    usage: /<command> [rulename]

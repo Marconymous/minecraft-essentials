@@ -1,0 +1,8 @@
+name: minecraft-essentials
+version: ${project.version}
+main: marconymous.dev.MineEssentials
+api-version: 1.16
+prefix: MCES
+authors: [ Marconymous ]
+description: Minecraft Plugin with essential commands.
+website: marconymous.github.io
