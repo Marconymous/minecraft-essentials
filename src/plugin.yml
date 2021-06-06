@@ -2,6 +2,7 @@ name: MinecraftEssentials
 main: marconymous.dev.MinecEssentials
 version: 1.0
 author: Marconymous
+api-version: 1.14.0
 commands:
   rlt:
     description: Command to toggle a rule.
