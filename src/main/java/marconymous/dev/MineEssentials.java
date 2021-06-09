@@ -1,10 +1,15 @@
 package marconymous.dev;
 
 import marconymous.dev.classes.GlobalContainer;
+import marconymous.dev.commands.Fly;
 import marconymous.dev.commands.RuleToggle;
 import marconymous.dev.events.JoinLeaveEvent;
 import marconymous.dev.events.RuleEvents;
+import marconymous.dev.tabcompleters.FlyTabCompleter;
+import marconymous.dev.tabcompleters.RuleToggleCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class MineEssentials extends JavaPlugin {
 
@@ -19,7 +24,14 @@ public final class MineEssentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new RuleEvents(gc), this);
 
         // Commands
-        getCommand("rlt").setExecutor(new RuleToggle(gc));
+
+        // Rule Toggle
+        Objects.requireNonNull(getCommand("rlt")).setExecutor(new RuleToggle(gc));
+        Objects.requireNonNull(getCommand("rlt")).setTabCompleter(new RuleToggleCompleter());
+
+        //Fly
+        Objects.requireNonNull(getCommand("fly")).setExecutor(new Fly());
+        Objects.requireNonNull(getCommand("fly")).setTabCompleter(new FlyTabCompleter());
     }
 
     @Override

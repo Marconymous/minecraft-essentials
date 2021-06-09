@@ -21,12 +21,17 @@ public class RuleToggle implements CommandExecutor {
         for (Map.Entry<SpecialRule, Boolean> entry : gc.getRules().entrySet()) {
             if (args.length == 1) {
                 if (entry.getKey().getName().equalsIgnoreCase(args[0])) {
-                    entry.setValue(!entry.getValue());
+                    boolean newVal = !entry.getValue();
+                    entry.setValue(newVal);
+
+                    sender.sendMessage(ChatColor.GREEN + entry.getKey().getName() + " was set to: " + newVal);
                 }
             } else if (args.length == 2) {
                 if (entry.getKey().getName().equalsIgnoreCase(args[0])) {
                     try {
-                        entry.setValue(Boolean.parseBoolean(args[1]));
+                        boolean newVal = Boolean.parseBoolean(args[1]);
+                        entry.setValue(newVal);
+                        sender.sendMessage(ChatColor.GREEN + entry.getKey().getName() + " was set to: " + newVal);
                     } catch (Exception ignored) {
                         sender.sendMessage(ChatColor.RED + "Incorrect Usage of this command [argument 1]");
                     }

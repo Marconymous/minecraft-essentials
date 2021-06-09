@@ -9,7 +9,7 @@ public class GlobalContainer {
 
     public GlobalContainer() {
         rules.put(SpecialRule.INSTADEATH, false);
-        rules.put(SpecialRule.NOFALLDAMAGE, true);
+        rules.put(SpecialRule.NOFALLDAMAGE, false);
     }
 
     public HashMap<SpecialRule, Boolean> getRules() {

@@ -21,7 +21,7 @@ public class RuleEvents implements Listener {
         if (!(e.getEntity() instanceof Player)) return;
 
         Player p = (Player) e.getEntity();
-        p.setHealth(-1);
+        p.setHealth(0);
     }
 
     @EventHandler

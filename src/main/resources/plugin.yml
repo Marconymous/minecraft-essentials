@@ -6,3 +6,11 @@ prefix: MCES
 authors: [ Marconymous ]
 description: Minecraft Plugin with essential commands.
 website: marconymous.github.io
+commands:
+  rlt:
+    description: Command to toggle a rule.
+    usage: /<command> [rulename]
+
+  fly:
+    description: Use this command to enable / disable fly
+    usage: /<command> [Player | True/False] [True/False]

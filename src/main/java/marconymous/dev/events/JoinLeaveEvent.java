@@ -11,16 +11,16 @@ public class JoinLeaveEvent implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "]" + ChatColor.WHITE + e.getPlayer().getDisplayName());
+        e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.WHITE + e.getPlayer().getDisplayName());
     }
 
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
-        e.setQuitMessage(ChatColor.GRAY + "[" + ChatColor.RED + "-" + ChatColor.GRAY + "]" + ChatColor.WHITE + e.getPlayer().getDisplayName());
+        e.setQuitMessage(ChatColor.GRAY + "[" + ChatColor.RED + "-" + ChatColor.GRAY + "] " + ChatColor.WHITE + e.getPlayer().getDisplayName());
     }
 
     @EventHandler
     public void onKick(PlayerKickEvent e) {
-        e.setLeaveMessage(ChatColor.GRAY + "[" + ChatColor.RED + "- (kick)" + ChatColor.GRAY + "]" + ChatColor.WHITE + e.getPlayer().getDisplayName());
+        e.setLeaveMessage(ChatColor.GRAY + "[" + ChatColor.RED + "- (kick)" + ChatColor.GRAY + "] " + ChatColor.WHITE + e.getPlayer().getDisplayName());
     }
 }
