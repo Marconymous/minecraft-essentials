@@ -1,10 +1,13 @@
 package marconymous.dev;
 
 import marconymous.dev.classes.GlobalContainer;
+import marconymous.dev.commands.EnderChest;
 import marconymous.dev.commands.Fly;
 import marconymous.dev.commands.RuleToggle;
+import marconymous.dev.events.EnderChestInteraction;
 import marconymous.dev.events.JoinLeaveEvent;
 import marconymous.dev.events.RuleEvents;
+import marconymous.dev.tabcompleters.EnderChestTabCompleter;
 import marconymous.dev.tabcompleters.FlyTabCompleter;
 import marconymous.dev.tabcompleters.RuleToggleCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,15 +24,18 @@ public final class MineEssentials extends JavaPlugin {
 
         // Events
         getServer().getPluginManager().registerEvents(new JoinLeaveEvent(), this);
-        getServer().getPluginManager().registerEvents(new RuleEvents(gc), this);
 
-        // Commands
-
-        // Rule Toggle
+        // Rules
         Objects.requireNonNull(getCommand("rlt")).setExecutor(new RuleToggle(gc));
         Objects.requireNonNull(getCommand("rlt")).setTabCompleter(new RuleToggleCompleter());
+        getServer().getPluginManager().registerEvents(new RuleEvents(gc), this);
 
-        //Fly
+        // EnderChest
+        Objects.requireNonNull(getCommand("enderchest")).setExecutor(new EnderChest());
+        Objects.requireNonNull(getCommand("enderchest")).setTabCompleter(new EnderChestTabCompleter());
+        getServer().getPluginManager().registerEvents(new EnderChestInteraction(), this);
+
+        // Fly
         Objects.requireNonNull(getCommand("fly")).setExecutor(new Fly());
         Objects.requireNonNull(getCommand("fly")).setTabCompleter(new FlyTabCompleter());
     }

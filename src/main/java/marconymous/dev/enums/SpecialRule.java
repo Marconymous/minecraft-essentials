@@ -2,7 +2,9 @@ package marconymous.dev.enums;
 
 public enum SpecialRule {
     NOFALLDAMAGE(0, "noFallDamage"),
-    INSTADEATH(1, "instaDeath");
+    INSTADEATH(1, "instaDeath"),
+    NOHUNGER(2, "noHunger"),
+    NOHEAL(3, "noHeal");
 
     private final int code;
     private final String name;

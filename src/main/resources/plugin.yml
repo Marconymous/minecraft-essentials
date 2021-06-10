@@ -14,3 +14,10 @@ commands:
   fly:
     description: Use this command to enable / disable fly
     usage: /<command> [Player | True/False] [True/False]
+
+  enderchest:
+    description: Open your or someone elses enderchest
+    usage: /<command> [Player]
+    aliases:
+      - ec
+      - ecopen
